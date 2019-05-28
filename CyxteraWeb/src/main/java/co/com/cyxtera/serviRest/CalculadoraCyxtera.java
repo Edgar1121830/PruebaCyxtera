@@ -90,7 +90,7 @@ public class CalculadoraCyxtera {
 	 */
 	@POST
 	@Path("/adicionarNumero")
-	public Response adicionNumero(Double numero) {
+	public Response adicionNumero(@PathParam("numero") Double numero) {
 		Response r = null;
 		try {
 			log.info("envio de valor");
@@ -116,7 +116,7 @@ public class CalculadoraCyxtera {
 	 */
 	@POST
 	@Path("/adicionarOperadores")
-	public Response adicionOperacion(String operacion) {
+	public Response adicionOperacion(@PathParam("operacion") String operacion) {
 		Response r = null;
 		try {
 			log.info("envio de valor");
@@ -139,9 +139,10 @@ public class CalculadoraCyxtera {
 	 * retorna el resulado segun la operacion escogida
 	 * @return
 	 */
-	@GET
+	@POST
 	@Path("/verResultado")
-	public Response resultado(List<Double>numerosCarga, List<String>operacionesCarga ) {
+	public Response resultado(@PathParam("numerosCarga")
+			List<Double>numerosCarga, @PathParam("operacionesCarga") List<String>operacionesCarga ) {
 		Response r = null;
 		try {
 			log.info("envio de valor");
