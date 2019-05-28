@@ -139,7 +139,7 @@ public class CalculadoraCyxtera {
 	 * retorna el resulado segun la operacion escogida
 	 * @return
 	 */
-	@GET
+	@POST
 	@Path("/verResultado")
 	public Response resultado(List<Double>numerosCarga, List<String>operacionesCarga ) {
 		Response r = null;
